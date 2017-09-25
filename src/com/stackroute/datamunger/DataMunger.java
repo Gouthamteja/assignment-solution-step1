@@ -1,16 +1,11 @@
 package com.stackroute.datamunger;
 
-<<<<<<< HEAD
 import java.util.ArrayList; 
 import java.util.Scanner;
-=======
-import java.util.Arrays;
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 
 public class DataMunger {
 
 	public static void main(String[] args) {
-<<<<<<< HEAD
 		// read the query from the user into querystring variable 
 		
 		System.out.println("give input");
@@ -22,12 +17,6 @@ public class DataMunger {
 		DataMunger dm = new DataMunger();
 		dm.parseQuery(querystring);
 		sc.close();
-=======
-		// read the query from the user into queryString variable
-
-		// call the parseQuery method and pass the queryString variable as a parameter
-
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 	/*
@@ -38,7 +27,6 @@ public class DataMunger {
 	 * all the methods together, so that we can call this method only from main()
 	 * method to print the entire output in console
 	 */
-<<<<<<< HEAD
 	public void parseQuery(String querystring) {
  
 		// call the methods
@@ -53,27 +41,12 @@ public class DataMunger {
 		getGroupByFields(querystring);
 		getAggregateFunctions(querystring);
 		
-=======
-	public void parseQuery(String queryString) {
-		// call the methods
-		getSplitStrings(queryString);
-		getFile(queryString);
-		getBaseQuery(queryString);
-		getConditionsPartQuery(queryString);
-		getConditions(queryString);
-		getLogicalOperators(queryString);
-		getFields(queryString);
-		getOrderByFields(queryString);
-		getGroupByFields(queryString);
-		getAggregateFunctions(queryString);
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 	/*
 	 * this method will split the query string based on space into an array of words
 	 * and display it on console
 	 */
-<<<<<<< HEAD
 	public String[] getSplitStrings(String querystring) {
 		String[] arr = querystring.split(" ");
 		for(int i = 0;i<arr.length;i++) {
@@ -81,11 +54,6 @@ public class DataMunger {
 			arr[i] = arr[i].toLowerCase();
 		}
 		return arr;
-=======
-	public String[] getSplitStrings(String queryString) {
-
-		return null;
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 	/*
@@ -98,15 +66,9 @@ public class DataMunger {
 	 * 
 	 * Please consider this while extracting the file name in this method.
 	 */
-<<<<<<< HEAD
 	public String getFile(String querystring) {
 //		System.out.println(querystring.split("from ")[1].split(" ")[0]);
 		return querystring.split("from ")[1].split(" ")[0]; 
-=======
-	public String getFile(String queryString) {
-
-		return null;
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 	/*
@@ -121,7 +83,6 @@ public class DataMunger {
 	 * 3. the query might not contain where, but can contain both group by
 	 *    and order by clause
 	 */
-<<<<<<< HEAD
 	public String getBaseQuery(String querystring) {
 		String[] arr = querystring.split(" ");
 		String ret = "";
@@ -134,12 +95,6 @@ public class DataMunger {
 		} 
 		System.out.println(ret);
 		return ret; 
-=======
-	public String getBaseQuery(String queryString) {
-
-		return null;
-
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 	/*
@@ -154,7 +109,6 @@ public class DataMunger {
 	 * For eg: from_city,job_order_no,group_no etc. 
 	 * 2. The query might not contain where clause at all.
 	 */
-<<<<<<< HEAD
 	public String getConditionsPartQuery(String querystring) {
 		//System.out.println("conditions" + !querystring.contains("where"));
 		if(!querystring.contains("where")) return null ;
@@ -177,12 +131,6 @@ public class DataMunger {
 		//System.out.println("Condition part:" + (" season > 2014 and city ='bangalore' " ==ret));
 		if(querystring.contains("group") ||querystring.contains("order")  ) return ret + " ";
 		return ret;   
-=======
-	public String getConditionsPartQuery(String queryString) {
-
-		return null;
-
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 	/*
@@ -203,7 +151,6 @@ public class DataMunger {
 	 * For eg: from_city,job_order_no,group_no etc. 
 	 * 2. The query might not contain where clause at all.
 	 */
-<<<<<<< HEAD
 	public String[] getConditions(String querystring)  {
 		if(!querystring.contains("where")) return null; 
 		querystring = getConditionsPartQuery(querystring);
@@ -214,11 +161,6 @@ public class DataMunger {
 			//System.out.println("condition " + (i+1) + ": " + arr[i]);
 		}
 		return arr;
-=======
-	public String[] getConditions(String queryString) {
-
-		return null;
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 	/*
@@ -234,7 +176,6 @@ public class DataMunger {
 	 * Please consider these as well when extracting the logical operators.
 	 * 
 	 */
-<<<<<<< HEAD
 	public String[] getLogicalOperators(String querystring) {
 
 		if(!querystring.contains("where")) return null; 
@@ -279,14 +220,6 @@ public class DataMunger {
 
 	
 	
-=======
-	public String[] getLogicalOperators(String queryString) {
-
-		return null;
-
-	}
-
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	/*
 	 * This method will extract the fields to be selected from the query string. The
 	 * query string can have multiple fields separated by comma. The extracted
@@ -301,7 +234,6 @@ public class DataMunger {
 	 * 2. The field name can contain '*'
 	 * 
 	 */
-<<<<<<< HEAD
 	public String[] getFields(String querystring) {
 		querystring = querystring.split("from")[0];
 		querystring = querystring.substring(querystring.indexOf(" "), querystring.length()).trim();
@@ -312,27 +244,6 @@ public class DataMunger {
 			//System.out.println("Get Fields: " + arr[i]); 
 		}
 		return arr;
-=======
-	public String[] getFields(String queryString) {
-
-		return null;
-
-	}
-
-	/*
-	 * This method extracts the order by fields from the query string. 
-	 * Note: 
-	 * ------
-	 * 1. The query string can contain more than one order by fields. 
-	 * 2. The query string might not contain order by clause at all. 
-	 * 3. The field names,condition values might contain "order" as a substring. 
-	 * For eg:order_number,job_order 
-	 * Consider this while extracting the order by fields
-	 */
-	public String[] getOrderByFields(String queryString) {
-
-		return null;
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 	/*
@@ -346,7 +257,6 @@ public class DataMunger {
 	 * 
 	 * Consider this while extracting the group by fields
 	 */
-<<<<<<< HEAD
 	public String[] getGroupByFields(String querystring) { 
 		String arr[] = querystring.split(" ");
 		boolean bool = false;
@@ -362,11 +272,6 @@ public class DataMunger {
 		//System.out.println("Groupby + " + ret.length());
 		if(ret.length() == 0) return null;
 		return ret.split(" ");
-=======
-	public String[] getGroupByFields(String queryString) {
-
-		return null;
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 	/*
@@ -380,7 +285,6 @@ public class DataMunger {
 	 * 
 	 * Consider this while extracting the aggregate functions
 	 */
-<<<<<<< HEAD
 	public String[] getAggregateFunctions(String querystring) { 
 		String[] arr = querystring.split("from");
         String[] arr1 = arr[0].split("select");
@@ -392,11 +296,6 @@ public class DataMunger {
                 //System.out.println(arr2[i]);
             }
             return arr2; 
-=======
-	public String[] getAggregateFunctions(String queryString) {
-
-		return null;
->>>>>>> 837a28ee62793a0735164e73490ae72f76a95b2c
 	}
 
 }
