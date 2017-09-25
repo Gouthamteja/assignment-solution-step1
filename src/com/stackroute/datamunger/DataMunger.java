@@ -8,7 +8,7 @@ public class DataMunger {
 	public static void main(String[] args) {
 		// read the query from the user into querystring variable 
 		
-		System.out.println("give input");
+//		System.out.println("give input");
 		Scanner sc = new Scanner(System.in); 
 		
 		String querystring = sc.nextLine();
